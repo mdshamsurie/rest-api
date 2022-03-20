@@ -1,5 +1,5 @@
 <?php 
-
+//show data hardcode
 // $pelajar = [
 //     ["nama" => "mohd shamsurie",
 //      "no matrik" => "fid3245",
@@ -13,14 +13,24 @@
 
 // $data = json_encode($pelajar);
 // echo $data;
+// *******************************************************************
 
-$dbh = new PDO('mysql:host=localhost;dbname=automation', 'root', '');
-$db = $dbh->prepare('SELECT * FROM user_login');
-$db->execute();
-$automation = $db->fetchall(PDO::FETCH_ASSOC);
+// show data dari database local
+// $dbh = new PDO('mysql:host=localhost;dbname=northwindmysql', 'root', '');
+// $db = $dbh->prepare('SELECT * FROM customers');
+// $db->execute();
+// $northwindmysql = $db->fetchall(PDO::FETCH_ASSOC);
 
-$data = json_encode($automation);
-echo $data;
+// $data = json_encode($northwindmysql);
+// echo $data;
 
+// *******************************************************************
+//show data dari json file
+$data = file_get_contents('test.json');
+$showData = json_decode($data, true);
 
-?>
+var_dump($showData);
+echo'******** -->';
+echo $showData[0]["references"]["reference1"]; // dapatkan refence 1 dalam references
+// *******************************************************************
+ ?>

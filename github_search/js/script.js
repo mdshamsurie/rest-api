@@ -1,12 +1,12 @@
 $('#search-button').on('click', function(){
 
     $.ajax({
-        url: '',
+        url: 'https://api.github.com/search/repositories',
         type: 'get',
-        dataType: 'json',
+        dataType: 'jsonp',
         data:{
-            'apikey':'',
-            's': ''
+            'q':'',
+            
 
         }
     })

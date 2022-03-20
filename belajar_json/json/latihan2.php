@@ -29,9 +29,9 @@ function X($x){
 
 $context = stream_context_create($opts);
 $content = file_get_contents("https://api.github.com/search/repositories?q=javascript&page=2&per_page=100", false, $context);
-//$github = json_decode($content, true);
+$github = json_decode($content, true);
 
-X($content);
+X($github);
 
 
 ?>
